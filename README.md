@@ -13,25 +13,25 @@ Ele foi desenhado especificamente para ser **simples de instalar** e para se int
 ## ✨ Funcionalidades
 
 - **Zero Root:** Funciona em qualquer dispositivo Android comum.
-- **Integração Nativa:** Conecta-se diretamente ao app "Meus Arquivos" (Samsung), Explorador de Arquivos (Windows) e Finder (Mac).
+- **Integração Nativa:** Conecta-se diretamente à app "Meus Arquivos" (Samsung), Explorador de Ficheiros (Windows) e Finder (Mac).
 - **Leve e Rápido:** Baseado em Python (`pyftpdlib`), consome pouquíssima bateria e memória.
 - **Instalação Automática:** Um script simples de instalação faz todo o trabalho de dependências.
-- **Sem complicações de arquitetura:** Diferente de binários compilados, este script roda em qualquer processador (ARM, ARM64, x86) graças ao Python.
+- **Sem complicações de arquitetura:** Diferente de binários compilados, este script corre em qualquer processador (ARM, ARM64, x86) graças ao Python.
 
 ---
 
 ## ⚠️ Pré-requisitos
 
-1. Um dispositivo Android conectado a uma rede Wi-Fi.
-2. O aplicativo **Termux**.
-   > **Atenção:** Baixe o Termux através do [F-Droid](https://f-droid.org/packages/com.termux/) ou do [GitHub oficial do Termux](https://github.com/termux/termux-app/releases). **Não use a versão da Google Play Store**, pois ela está descontinuada e apresentará erros.
+1. Um dispositivo Android ligado a uma rede Wi-Fi.
+2. A aplicação **Termux**.
+   > **Atenção:** Transfira o Termux através do [F-Droid](https://f-droid.org/packages/com.termux/) ou do [GitHub oficial do Termux](https://github.com/termux/termux-app/releases). **Não use a versão da Google Play Store**, pois ela está descontinuada e apresentará erros.
 
 ---
 
-## 🚀 Instalação
+## 🚀 Instalação (Apenas na primeira vez)
 
-Abra o Termux no seu telemóvel e execute os comandos abaixo, um por um:
+Abra o Termux no seu telemóvel e execute os comandos abaixo, um a um:
 
-1. Clone este repositório:
+1. **Transfira os ficheiros do projeto:**
 ```bash
 git clone [https://github.com/Lemekkk/servidor-nas.git](https://github.com/Lemekkk/servidor-nas.git)
