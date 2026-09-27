@@ -40,7 +40,7 @@ bash start.sh
 
 O terminal irá mostrar que o servidor está a correr e fornecerá um endereço IP (por exemplo: `ftp://192.168.1.5:2121`).
 
-## 💻 Como Aceder aos Ficheiros (Pelo Computador)
+## 💻 Como acessar os Ficheiros (Pelo Computador)
 
 1. Certifique-se de que o telemóvel e o computador estão ligados **à mesma rede Wi-Fi**.
 2. No seu computador, abra o Explorador de Ficheiros (Windows) ou Finder (Mac).
