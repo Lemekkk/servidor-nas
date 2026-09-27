@@ -19,6 +19,11 @@ authorizer.add_user("admin", "1234", PASTA_PARTILHADA, perm="elradfmwMT")
 handler = FTPHandler
 handler.authorizer = authorizer
 
-# Inicia o servidor na porta 2121 (portas abaixo de 1024 exigem root)
+# --- OTIMIZAÇÃO DE VELOCIDADE ---
+# Usa transferência direta do sistema operacional, poupando a CPU do celular
+handler.use_sendfile = True
+# --------------------------------
+
+# Inicia o servidor na porta 2121
 server = FTPServer(("0.0.0.0", 2121), handler)
 server.serve_forever()
