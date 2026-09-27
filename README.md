@@ -20,7 +20,14 @@ Antes de começar, precisa de instalar o **Termux** no seu telemóvel Android.
 ## 🛠️ Passo a Passo de Instalação
 
 1. **Abra o Termux** no seu telemóvel.
-2. Clone este repositório ou descarregue os ficheiros para o Termux.
+2. instale o pacote do git com este comando:
+```bash
+pkg install git
+```
+3. Clone este repositório ou descarregue os ficheiros para o Termux:
+```bash
+git clone https://github.com/Lemekkk/servidor-nas.git
+```
 3. Navegue até à pasta onde os ficheiros foram guardados.
 4. Execute o script de instalação com o seguinte comando:
 
@@ -38,7 +45,7 @@ Sempre que quiser ligar o seu servidor NAS, basta abrir o Termux, aceder à past
 bash start.sh
 ```
 
-O terminal irá mostrar que o servidor está a correr e fornecerá um endereço IP (por exemplo: `ftp://192.168.1.5:2121`).
+O terminal irá mostrar que o servidor está a correr e fornecerá um endereço IP (por exemplo: `ftp://192.1xx.xx.x:2121`).
 
 ## 💻 Como acessar os Ficheiros (Pelo Computador)
 
