@@ -4,34 +4,62 @@
 [![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)](#)
 [![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-green)](#)
 
-Este projeto transforma o seu smartphone ou tablet Android num **Servidor NAS local (Network Attached Storage)** super leve, utilizando o protocolo FTP. 
+Este projeto permite transformar o seu telemóvel Android num Servidor NAS (Network Attached Storage) através do protocolo FTP. Ele utiliza a aplicação **Termux** e um script em **Python** para partilhar os seus ficheiros na rede Wi-Fi local.
 
-Ele foi desenhado especificamente para ser **simples de instalar** e para se integrar perfeitamente a gestores de ficheiros nativos, como a função **"Armazenamento de rede" da Samsung**, exploradores do Windows ou gestores no Linux e macOS — tudo isso **sem necessidade de Root**.
+## 🗂️ Arquivos do Projeto
 
----
+* `install.sh`: Script de instalação automática (atualiza o sistema, instala o Python e pede permissões).
+* `start.sh`: Script para iniciar rapidamente o seu servidor FTP.
+* `server.py`: O código principal em Python que define as configurações do servidor FTP.
 
-## ✨ Funcionalidades
+## 🚀 Pré-requisitos
 
-- **Zero Root:** Funciona em qualquer dispositivo Android comum.
-- **Integração Nativa:** Conecta-se diretamente à app "Meus Arquivos" (Samsung), Explorador de Ficheiros (Windows) e Finder (Mac).
-- **Leve e Rápido:** Baseado em Python (`pyftpdlib`), consome pouquíssima bateria e memória.
-- **Instalação Automática:** Um script simples de instalação faz todo o trabalho de dependências.
-- **Sem complicações de arquitetura:** Diferente de binários compilados, este script corre em qualquer processador (ARM, ARM64, x86) graças ao Python.
+Antes de começar, precisa de instalar o **Termux** no seu telemóvel Android.
+*Recomendação:* Descarregue o Termux através do **F-Droid** (a versão da Google Play Store está desatualizada).
 
----
+## 🛠️ Passo a Passo de Instalação
 
-## ⚠️ Pré-requisitos
+1. **Abra o Termux** no seu telemóvel.
+2. Clone este repositório ou descarregue os ficheiros para o Termux.
+3. Navegue até à pasta onde os ficheiros foram guardados.
+4. Execute o script de instalação com o seguinte comando:
 
-1. Um dispositivo Android ligado a uma rede Wi-Fi.
-2. A aplicação **Termux**.
-   > **Atenção:** Transfira o Termux através do [F-Droid](https://f-droid.org/packages/com.termux/) ou do [GitHub oficial do Termux](https://github.com/termux/termux-app/releases). **Não use a versão da Google Play Store**, pois ela está descontinuada e apresentará erros.
-
----
-
-## 🚀 Instalação (Apenas na primeira vez)
-
-Abra o Termux no seu telemóvel e execute os comandos abaixo, um a um:
-
-1. **Transfira os ficheiros do projeto:**
 ```bash
-git clone [https://github.com/Lemekkk/servidor-nas.git](https://github.com/Lemekkk/servidor-nas.git)
+bash install.sh
+```
+
+5. **⚠️ Importante:** Durante a instalação, o ecrã do seu telemóvel vai mostrar um aviso a pedir permissão de acesso aos ficheiros ("Allow Termux to access photos, media, and files on your device"). **Toque em Permitir** para que o servidor consiga ler e partilhar os seus ficheiros.
+
+## ▶️ Como Iniciar o Servidor
+
+Sempre que quiser ligar o seu servidor NAS, basta abrir o Termux, aceder à pasta do projeto e executar:
+
+```bash
+bash start.sh
+```
+
+O terminal irá mostrar que o servidor está a correr e fornecerá um endereço IP (por exemplo: `ftp://192.168.1.5:2121`).
+
+## 💻 Como Aceder aos Ficheiros (Pelo Computador)
+
+1. Certifique-se de que o telemóvel e o computador estão ligados **à mesma rede Wi-Fi**.
+2. No seu computador, abra o Explorador de Ficheiros (Windows) ou Finder (Mac).
+3. Na barra de endereços, digite o IP fornecido pelo Termux (ex: `ftp://192.168.1.X:2121`) e prima Enter.
+4. Já está! Agora pode ver, copiar e enviar ficheiros diretamente para o seu telemóvel sem precisar de cabos.
+
+## 📁 Como ligar na app "Meus Arquivos" (Samsung)
+
+1. Abra a app **Meus Arquivos** no seu Samsung.
+2. Deslize até encontrar a secção **Armazenamento de rede** e toque nela.
+3. Toque no ícone **+** (ou "Adicionar armazenamento de rede") e selecione **Servidor FTP**.
+4. Preencha os dados exatamente como apareceram no Termux:
+   * **Endereço do Servidor:** (O IP mostrado no ecrã)
+   * **Porta:** 2121
+   * **Nome de utilizador:** admin (ou o que configurou)
+   * **Palavra-passe:** 1234 (ou a que configurou)
+5. Toque em **Adicionar/Guardar**. Pronto! Agora o seu telemóvel funciona como um disco de rede.
+
+## 🛑 Como Parar o Servidor
+
+Para desligar o servidor, volte à aplicação Termux e prima as teclas:
+`CTRL + C`
